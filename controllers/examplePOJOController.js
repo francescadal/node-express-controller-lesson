@@ -1,5 +1,10 @@
 'use strict';
 
+var exampleDeny = function examplePatch(req, res) {
+    // not allowed!
+    res.sendStatus(405);
+};
+
 var exampleController = {
     get : function exampleGet(req, res) {
         res.status(200).json({
@@ -15,14 +20,8 @@ var exampleController = {
             res.sendStatus(400);
         }
     },
-    patch : function examplePatch(req, res) {
-        // not allowed!
-        res.sendStatus(405);
-    },
-    'delete' : function exampleDelete(req, res) {
-        // not allowed!
-        res.sendStatus(405);
-    }
+    patch : exampleDeny,
+    'delete' : exampleDeny
 };
 
 module.exports = exampleController;
