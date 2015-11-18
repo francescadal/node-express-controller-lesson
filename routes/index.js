@@ -1,9 +1,13 @@
 var express = require('express');
 var router = express.Router();
+var exCtrl = require('../controllers/examplePOJOController');
+
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.route('/').
+    get(exCtrl.get).
+    post(exCtrl.post).
+    patch(exCtrl.patch).
+    delete(exCtrl.delete);
 
 module.exports = router;
