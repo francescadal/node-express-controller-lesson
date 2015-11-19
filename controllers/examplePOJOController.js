@@ -20,8 +20,7 @@ var exampleController = {
             res.sendStatus(400);
         }
     },
-    patch : exampleDeny,
-    'delete' : exampleDeny
+    deny : exampleDeny
 };
 
 module.exports = exampleController;
