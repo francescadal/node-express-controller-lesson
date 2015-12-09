@@ -5,7 +5,7 @@ var Controller = require('./Controller');
 var exampleController = new Controller();
 exampleController.setHandler('get', function exampleGet(req, res) {
     res.status(200).json({
-        example : "Example!"
+        example : "Success"
     });
 });
 exampleController.setHandler('post', function examplePost(req, res) {
